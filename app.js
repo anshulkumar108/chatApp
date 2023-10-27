@@ -10,7 +10,11 @@ const { sequelize } = require("./db/sequelize");
 const {User}=require("./model/user")
 const router=require("./routes/user")
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods:["GET","POST","DELETE","PUT"],
+  credentials: true
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: false }));
 app.use('/',router)
