@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(252, 252, 252);
+    
+}
+h2{
+    text-align: center;
+}
+#user1{
+    display: block;
+    background-color: rgb(218, 204, 230);
+    text-align:left;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 10px 5px 10px 20px;
+}
+
+#user2{
+    display: block;
+    background-color: rgb(234, 209, 236);
+    text-align:left;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 10px 5px 10px 20px;
+}
