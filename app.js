@@ -12,7 +12,6 @@ const router=require("./routes/user")
 
 app.use(cors({
   origin: '*',
-  methods:["GET","POST","DELETE","PUT"],
   credentials: true
 }));
 app.use(bodyParser.urlencoded({ extended: true }));
