@@ -23,7 +23,7 @@ const UserSignup=async(req,res,next)=>{
 }
 
 function generateAccessToken(obj){
-    return jwt.sign(obj, 'chat');
+    return jwt.sign(obj,  process.env.JWT_SECRET_KEY);
 }
 
 

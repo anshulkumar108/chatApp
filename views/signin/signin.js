@@ -14,11 +14,14 @@ async function signin(e){
     emailOrPhone.value="";
     password.value="";
     try {
-        const response=await axios.post('http:localhost:5000/user/signin',user);
+        const response=await axios.post('http://localhost:5000/user/signin',user);
         console.log(response.status);
-        console.log(response.data);
+        console.log(response);
+        console.log(response.data.token);
+        localStorage.setItem('token',response.data.token)
         if(response.status===200){
             alert('signin successful')
+            window.location.href='../chat/chat.html'
         }else if(response.status == 404) {
             alert('User not found')
         }

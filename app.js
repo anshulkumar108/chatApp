@@ -7,8 +7,10 @@ const app = express();
 const Port = process.env.PORT || 5000;
 
 const { sequelize } = require("./db/sequelize");
+const {ChatMessage }=require('./model/chat')
 const {User}=require("./model/user")
 const router=require("./routes/user")
+const routerChat=require("./routes/chat")
 
 app.use(cors({
   origin: '*',
@@ -17,6 +19,7 @@ app.use(cors({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: false }));
 app.use('/',router)
+app.use('/',routerChat)
 
 sequelize.sync().then((result)=>{
 app.listen(Port,() => {
