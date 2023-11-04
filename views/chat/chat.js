@@ -4,7 +4,7 @@ const token=localStorage.getItem('token')
 
 send.addEventListener('click',message);
 
-
+window.addEventListener('DOMContentLoaded',fetchMessage)
 function parseJwt (token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -28,4 +28,14 @@ async function message(e){
     }
    
 
+}
+
+async function fetchMessage(){
+
+    const response=await axios.get('http://localhost:5000/user/allchat',{headers:{authorization:token}})
+    try {
+        console.log(response.data)
+    } catch (error) {
+        console.log(error);
+    }
 }

@@ -13,4 +13,14 @@ const addMsg=async(req,res,next)=>{
     }
 }
 
-module.exports = {addMsg}
+const allMsg=async (req,res,next)=>{
+  const allChats=await ChatMessage.findAll();
+  try {
+    console.log(allChats);
+    res.status(200).json({message:'successful'})
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+module.exports = {addMsg,allMsg}
